@@ -43,4 +43,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./docs/book/html
+          keep_files: true
           cname: docs.perlur.cloud
