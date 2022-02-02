@@ -1,0 +1,21 @@
+[book]
+authors = ["Mark Stopka"]
+language = "en"
+multilingual = false
+src = "src"
+title = "PERLUR Group Documentation"
+
+[build]
+create-missing = false
+
+[output.html]
+theme= "perlur-theme"
+default-theme = "navy"
+additional-css = ["perlur-theme/fonts/neo-sans-pro.css", "perlur-theme/css/perlur-colors.css"]
+copy-fonts = true
+git-repository-url = "https://github.com/PERLUR/docs.opensuse.org"
+git-repository-icon = "fa-github"
+
+[output.linkcheck]
+follow-web-links = true
+warning-policy = "ignore"
