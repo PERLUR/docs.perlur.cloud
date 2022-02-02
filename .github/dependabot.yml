@@ -1,0 +1,14 @@
+# Enable updates for different dependencies
+
+version: 2
+updates:
+# Set update schedule for GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/.github/workflows/"
+    schedule:
+      # Check for updates to GitHub Actions every weekday
+      interval: "daily"
+    assignees:
+      - "mark-stopka"
+    reviewers:
+      - "mark-stopka"
