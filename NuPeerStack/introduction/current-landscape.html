@@ -1,0 +1,209 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js navy">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Current Landscape - NuPeerStack Documentation</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../perlur-theme/fonts/neo-sans-pro.css">
+        <link rel="stylesheet" href="../perlur-theme/css/perlur-colors.css">
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "navy";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('navy')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../introduction/index.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../introduction/current-landscape.html" class="active"><strong aria-hidden="true">1.1.</strong> Current Landscape</a></li></ol></li><li class="chapter-item expanded "><a href="../nupeerstack-technical-architecture/index.html"><strong aria-hidden="true">2.</strong> NuPeerStack Technical Architecture</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.</strong> Overall Cloud Ecosystem</div></li></ol></li><li class="chapter-item expanded "><a href="../business-model/index.html"><strong aria-hidden="true">3.</strong> Business Model</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../business-model/tokenomics/index.html"><strong aria-hidden="true">3.1.</strong> Tokenomics</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../business-model/tokenomics/fungible-tokens.html"><strong aria-hidden="true">3.1.1.</strong> Fungible Tokens</a></li><li class="chapter-item expanded "><a href="../business-model/tokenomics/non-fungible-tokens.html"><strong aria-hidden="true">3.1.2.</strong> Non-Fungible Tokens</a></li></ol></li><li class="chapter-item expanded "><a href="../business-model/revenue-streams/index.html"><strong aria-hidden="true">3.2.</strong> Revenue Streams</a></li></ol></li><li class="chapter-item expanded "><a href="../governance/index.html"><strong aria-hidden="true">4.</strong> Governance</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../governance/treasury.html"><strong aria-hidden="true">4.1.</strong> Treasury</a></li></ol></li><li class="chapter-item expanded "><a href="../our-team/index.html"><strong aria-hidden="true">5.</strong> Our Team</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">NuPeerStack Documentation</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/PERLUR/NuPeerStack" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="current-landscape"><a class="header" href="#current-landscape">Current Landscape</a></h1>
+<p>Current landscape of IT Infrastructure and Services can be separated into three major categories, On-Premise, in the Corporate Cloud Providers and Decentralized and Distributed services providers.</p>
+<p>We will not go into details of On-Premise IT infrastructure, however it still represented 58% market share in 2020<sup class="footnote-reference"><a href="#on-premise-it-size-2020">1</a></sup> according to Business Wire.</p>
+<p>Current landscape of Cloud Services is largely dominated by several major services providers such as Amazon Web Services, Microsoft Azure, Alibaba, Google, Huawei and others<sup class="footnote-reference"><a href="#worldwide-iaas-service-growth-2020">2</a></sup>. These may be consider the established and highly centralized players.</p>
+<table><thead><tr><th style="text-align: right">Company</th><th style="text-align: right">2020 Revenue</th><th style="text-align: right">2020 Market</th><th style="text-align: right">2019 Revenue</th><th style="text-align: right">2019 Market Share (%)</th><th style="text-align: right">2019-2020 Growth (%)</th></tr></thead><tbody>
+<tr><td style="text-align: right">Amazon</td><td style="text-align: right">26,201</td><td style="text-align: right">40.8</td><td style="text-align: right">20,365</td><td style="text-align: right">44.6</td><td style="text-align: right">28.7</td></tr>
+<tr><td style="text-align: right">Microsoft</td><td style="text-align: right">12,658</td><td style="text-align: right">19.7</td><td style="text-align: right">7,950</td><td style="text-align: right">17.4</td><td style="text-align: right">59.2</td></tr>
+<tr><td style="text-align: right">Alibaba</td><td style="text-align: right">6,117</td><td style="text-align: right">9.5</td><td style="text-align: right">4,004</td><td style="text-align: right">8.8</td><td style="text-align: right">52.8</td></tr>
+<tr><td style="text-align: right">Google</td><td style="text-align: right">3,932</td><td style="text-align: right">6.1</td><td style="text-align: right">2,367</td><td style="text-align: right">5.2</td><td style="text-align: right">66.1</td></tr>
+<tr><td style="text-align: right">Huawei</td><td style="text-align: right">2,672</td><td style="text-align: right">4.2</td><td style="text-align: right">882</td><td style="text-align: right">1.9</td><td style="text-align: right">202.8</td></tr>
+<tr><td style="text-align: right">Others</td><td style="text-align: right">12,706</td><td style="text-align: right">19.8</td><td style="text-align: right">10,115</td><td style="text-align: right">22.1</td><td style="text-align: right">25.6</td></tr>
+<tr><td style="text-align: right">Total</td><td style="text-align: right">64,286</td><td style="text-align: right">100.0</td><td style="text-align: right">45,684</td><td style="text-align: right">100.0</td><td style="text-align: right">40.7</td></tr>
+</tbody></table>
+<h2 id="decentralized-and-distributed-competition"><a class="header" href="#decentralized-and-distributed-competition">Decentralized and Distributed Competition</a></h2>
+<p>In addition to established and highly centralized players, there are several disruptors from the Decentralized and Distributed areas, these are however still trying to find their right positioning and although being priced comparatively cheaper to the major cloud players are not being very successful which is caused by both last of aggressive sales tactics oriented at the end customers as well as lack of unified service portfolio.</p>
+<p>To name just few projects in the IaaS Data Storage area, we have identified projects in the table below:</p>
+<table><thead><tr><th style="text-align: right">Project</th><th style="text-align: right">Development Company</th><th style="text-align: right">Used Blockchain</th><th style="text-align: right">Payment Token</th></tr></thead><tbody>
+<tr><td style="text-align: right">SIA</td><td style="text-align: right">Nebulous, Inc.</td><td style="text-align: right">Bitcoin</td><td style="text-align: right">SC</td></tr>
+<tr><td style="text-align: right">Storj</td><td style="text-align: right">Storj Labs, Inc.</td><td style="text-align: right">Ethereum</td><td style="text-align: right">STORJ</td></tr>
+<tr><td style="text-align: right">Filecoin</td><td style="text-align: right">Protocol Labs</td><td style="text-align: right">Filecoin</td><td style="text-align: right">FIL</td></tr>
+<tr><td style="text-align: right">IAGON</td><td style="text-align: right">Iagon AS</td><td style="text-align: right">Ethereum</td><td style="text-align: right">IAG</td></tr>
+</tbody></table>
+<div class="footnote-definition" id="on-premise-it-size-2020"><sup class="footnote-definition-label">1</sup>
+<p><a href="https://www.businesswire.com/news/home/20211001005348/en/Global-Digital-Signature-Market-On-Premise-Accounts-for-Largest-Market-Share-With-58-in-2020---ResearchAndMarkets.com#:%7E:text=On%2DPremise%20accounted%20for%20the,30.10%25%20during%20the%20forecast%20period.">Global Digital Signature Market | On Premise Accounts for Largest Market Share With 58% in 2020 - ResearchAndMarkets.com</a></p>
+</div>
+<div class="footnote-definition" id="worldwide-iaas-service-growth-2020"><sup class="footnote-definition-label">2</sup>
+<p><a href="https://web.archive.org/web/20211228002853/https://www.gartner.com/en/newsroom/press-releases/2021-06-28-gartner-says-worldwide-iaas-public-cloud-services-market-grew-40-7-percent-in-2020">Gartner Says Worldwide IaaS Public Cloud Services Market Grew 40.7% in 2020</a></p>
+</div>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../introduction/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../nupeerstack-technical-architecture/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../introduction/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../nupeerstack-technical-architecture/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>
