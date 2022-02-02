@@ -1,0 +1,31 @@
+#
+#  © 2022 PERLUR Group
+#  SPDX-License-Identifier: GPL-3.0-only OR LGPL-3.0-only
+#
+
+name: Validate
+
+on:
+  push:
+    branches:
+     - '**'
+    tags-ignore:
+     - v*
+
+jobs:
+  lints:
+    name: Lints
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Check EditorConfig Compliance
+        uses: editorconfig-checker/action-editorconfig-checker@v1
+
+#      - name: Validate Dependabot Config
+#        uses: marocchino/validate-dependabot@v1
+#        id: validate
+#      - uses: marocchino/sticky-pull-request-comment@v2
+#        if: always()
+#        with:
+#          header: validate-dependabot
+#          message: ${{ steps.validate.outputs.markdown }}
